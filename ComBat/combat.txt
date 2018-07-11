@@ -1,0 +1,4 @@
+#ComBat
+
+source('ComBat.R')
+ComBat('Expression.txt','sample1.txt', skip=T)

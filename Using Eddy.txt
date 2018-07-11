@@ -1,0 +1,43 @@
+# Using Eddie
+# Requirements: WinSCP
+
+_______________________________________________________
+# Paths
+# Datastore path
+/exports/cmvm/datastore/eb/groups/freeman_grp/Ajit/
+
+# Eddie path
+/exports/cmvm/eddie/eb/groups/
+
+# Scratch space
+/exports/eddie/scratch/v1anirma/
+_______________________________________________________
+# Login details
+eddie3.ecdf.ed.ac.uk
+22
+
+# Qlogin
+qlogin -q staging
+qlogin -l h_vmem=5G -pe sharedmem 4
+
+_______________________________________________________
+# Copy files from datastore to Scratch space
+cp file destination
+cp /exports/cmvm/datastore/eb/groups/hume_buffalo_grp_new/10x_animals_list.txt /exports/eddie/scratch/s0928794
+_______________________________________________________
+# qsub
+#!/bin/bash
+# Grid Engine options
+#$ -N gvcf_maker_10x
+#$ -cwd
+#$ -M prasundutta87@gmail.com
+#$ -m bea
+#$ -pe sharedmem 4
+#$ -l h_vmem=4G
+#$ -l h_rt=480:00:0
+# Initialise the modules framework
+. /etc/profile.d/modules.sh
+_______________________________________________________
+
+use staging Qlogin for transfering data to strach space.
+use normal Qlogin for interactive job.
